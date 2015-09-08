@@ -1,6 +1,7 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
+excerpt_separator:   ""
 encoding:            "utf-8"
 permalink:           pretty
 relative_permalinks: true
