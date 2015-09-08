@@ -5,7 +5,8 @@ excerpt_separator:   ""
 encoding:            "utf-8"
 permalink:           pretty
 relative_permalinks: true
-markdown:            KramdownPygments
+highlighter:         pygments
+markdown:            kramdown
 kramdown:
   input:             kramdown
   parse_block_html:  true

@@ -14,13 +14,13 @@ Shibboleth SP's [docs][sp-attribute-access] mandate treating the data as UTF-8.
 
 Digging through tomcat's source code, I found this in [ByteChunk.java][tc-bytechunk]:
 
-~~~ java
+{% highlight java %}
 /** Default encoding used to convert to strings. It should be UTF8,
     as most standards seem to converge, but the servlet API requires
     8859_1, and this object is used mostly for servlets.
 */
 public static final Charset DEFAULT_CHARSET = B2CConverter.ISO_8859_1;
-~~~
+{% endhighlight %}
 
 Judging from the code where HTTP headers/AJP attributes are fed into the `ServletRequest` object, no
 attempt is made to pass any encoding information about them to `ByteChunk` - thus defaulting to ISO.
@@ -34,7 +34,7 @@ interpretation of HTTP headers or AJP attributes.
 - mkdir -p webapps/foo/WEB-INF
 - create web.xml with this content:
 
-~~~ xml
+{% highlight xml %}
 <web-app>
   <filter>
     <filter-name>encoding-filter</filter-name>
@@ -49,11 +49,11 @@ interpretation of HTTP headers or AJP attributes.
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 </web-app>
-~~~
+{% endhighlight %}
 
 - create index.jsp:
 
-~~~ jsp
+{% highlight jsp %}
 <%--
   Adapted 2015 by fuero
   original Copyright (c) 2002 by Phil Hanna
@@ -126,14 +126,14 @@ interpretation of HTTP headers or AJP attributes.
       return sb.toString();
    }
 %>
-~~~
+{% endhighlight %}
 
 - add URIEncoding="UTF-8" to server.xml (HTTP Connector)
 - run `curl` on a UTF-8 enabled shell:
 
 > curl --header "Foo: äöü" http://localhost:8080/foo/
 
-~~~ html
+{% highlight html %}
 <html>
    <head>
       <title>Echo</title>
@@ -160,7 +160,7 @@ interpretation of HTTP headers or AJP attributes.
       </table>
    </body>
 </html>
-~~~
+{% endhighlight %}
 
 ## Solution
 
