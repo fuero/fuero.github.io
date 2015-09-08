@@ -3,9 +3,15 @@
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 relative_permalinks: true
-markdown:            kramdown
+markdown:            KramdownPygments
 kramdown:
-  input:             GFM
+  input:             kramdown
+  parse_block_html:  true
+  hard_wraps:        false
+  smart_quotes:      lsquo,rsquo,ldquo,rdquo
+  auto_ids:          true
+  footnote_nr:       1
+  entity_output:     as_char
 
 # Setup
 title:               Fuero's blog
@@ -30,6 +36,7 @@ sass:
 author:
   name:              Robert Führicht
   email:             fuerob@gmail.com
+  jabber:            fuero@jabber.at
 
 # Custom vars
 version:             2.0.0
