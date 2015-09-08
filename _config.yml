@@ -8,8 +8,8 @@ relative_permalinks: true
 highlighter:         pygments
 markdown:            kramdown
 kramdown:
-  input:             kramdown
-  parse_block_html:  true
+  input:             GFM
+  parse_block_html:  false
   hard_wraps:        false
   smart_quotes:      lsquo,rsquo,ldquo,rdquo
   auto_ids:          true

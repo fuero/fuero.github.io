@@ -10,7 +10,7 @@ This is {{ site.author.name }}'s private blog.
 
 Use this form to contact me:
 
-<form accept-charset="UTF-8" action="//formspree.io/your@email.com" method="POST">
+<form accept-charset="UTF-8" action="//formspree.io/fuerob@gmail.com" method="POST">
   <input type="hidden" name="utf8" value="✓">
   <input type="text" name="name" placeholder="Your Name">
   <input type="email" name="_replyto" placeholder="Your Email">
