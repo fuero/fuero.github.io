@@ -3,6 +3,9 @@
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 relative_permalinks: true
+markdown:            kramdown
+kramdown:
+  input:             GFM
 
 # Setup
 title:               Fuero's blog
@@ -10,6 +13,11 @@ tagline:
 url:                 http://fuero.github.io
 paginate:            1
 baseurl:             ""
+
+pages_list:
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
 
 # Assets
 #
